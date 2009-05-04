@@ -1,0 +1,10 @@
+	.macro exit status
+		mov	r0, \status
+		mov	r7, #1
+		svc	#0
+	.endm
+	.macro brk addr
+		mov	r0, \addr
+		mov	r7, #45
+		svc	#0
+	.endm
